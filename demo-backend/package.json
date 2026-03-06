@@ -10,7 +10,7 @@
     "prisma:generate": "prisma generate",
     "prisma:push": "prisma db push",
     "prisma:studio": "prisma studio",
-    "setup": "prisma db push && ts-node prisma/seed.ts"
+    "setup": "prisma generate && prisma db push && npx ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.1.0",
