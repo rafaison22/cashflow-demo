@@ -1,0 +1,14 @@
+{
+  "name": "cashflow-demo",
+  "version": "1.0.0",
+  "description": "Demo del sistema Cashflow — ejecuta backend y frontend en paralelo",
+  "scripts": {
+    "setup": "cd demo-backend && npm install && npm run setup && cd ../demo-frontend && npm install",
+    "dev": "concurrently \"cd demo-backend && npm run dev\" \"cd demo-frontend && npm run dev\"",
+    "backend": "cd demo-backend && npm run dev",
+    "frontend": "cd demo-frontend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
