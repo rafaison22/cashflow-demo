@@ -93,15 +93,49 @@ async function main() {
   console.log('✓ 6 cajas creadas');
 
   // ── CLAVES ────────────────────────────────────────────────────────────────
-  const claves = await Promise.all([
-    prisma.clave.create({ data: { codigo: 'NOM',  descripcion: 'Nómina y sueldos',         categoria: 'Gasto' } }),
-    prisma.clave.create({ data: { codigo: 'OPER', descripcion: 'Gastos operativos',         categoria: 'Gasto' } }),
-    prisma.clave.create({ data: { codigo: 'VTA',  descripcion: 'Ventas y cobros',           categoria: 'Ingreso' } }),
-    prisma.clave.create({ data: { codigo: 'SERV', descripcion: 'Servicios profesionales',   categoria: 'Ingreso' } }),
-    prisma.clave.create({ data: { codigo: 'COMP', descripcion: 'Compras e insumos',         categoria: 'Gasto' } }),
-    prisma.clave.create({ data: { codigo: 'RENTA', descripcion: 'Renta y arrendamiento',   categoria: 'Gasto' } }),
-    prisma.clave.create({ data: { codigo: 'MISC', descripcion: 'Misceláneos',               categoria: 'Gasto' } }),
-  ]);
+  const claves = [];
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'NOM', descripcion: 'Nómina y sueldos', categoria: 'Gasto' }
+    })
+  );
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'OPER', descripcion: 'Gastos operativos', categoria: 'Gasto' }
+    })
+  );
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'VTA', descripcion: 'Ventas y cobros', categoria: 'Ingreso' }
+    })
+  );
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'SERV', descripcion: 'Servicios profesionales', categoria: 'Ingreso' }
+    })
+  );
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'COMP', descripcion: 'Compras e insumos', categoria: 'Gasto' }
+    })
+  );
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'RENTA', descripcion: 'Renta y arrendamiento', categoria: 'Gasto' }
+    })
+  );
+
+  claves.push(
+    await prisma.clave.create({
+      data: { codigo: 'MISC', descripcion: 'Misceláneos', categoria: 'Gasto' }
+    })
+  );
   console.log('✓ Claves creadas');
 
   // ── SOCIOS ────────────────────────────────────────────────────────────────
